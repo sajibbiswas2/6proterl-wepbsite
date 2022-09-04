@@ -80,9 +80,9 @@ const newsCardcarded = callIdData => {
               <div class="mt-3 ms-5">
               <p><i class="fa-sharp fa-solid fa-eye"></i><span>${newsCard.total_view ? newsCard.total_view : "no view"}</span></p>
               </div>
-              <button onclick=" modelCallId('${newsCard._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
-  Launch demo modal
-</button>
+             <button onclick="modelCallId('${newsCard._id}')" type="button" class="ms-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
+              Details
+             </button>
           
              </div>
           </div>
@@ -115,15 +115,17 @@ const modelCallId = push => {
 
 const callModalDetails = callModal =>{
    console.log(callModal);
-//    const calltitileId = document.getElementById('calltitileId');
-//    calltitileId.innerText =callModal.title;
-//    const callModalBody = document.getElementById('modalCallbody')
-//    callModalBody.innerHTML=`
-//     <img class="img-fluid" src="${callModal.image_url ? callModal.image_url : " No image"}">  
-//     <p>${callModal.author.name ? callModal.author.name : "No Name"}</p>
-//     <p class="text-truncate">${callModal.details}</p>
+   const calltitileId = document.getElementById('calltitileId');
+   calltitileId.innerText =callModal.title;
+   const callModalBody = document.getElementById('modalCallbody')
+   callModalBody.innerHTML=`
+  
 
-//    `;
+    <img class="img-fluid" src="${callModal.image_url ? callModal.image_url : " No image"}">  
+    <p>${callModal.author.name ? callModal.author.name : "No Name"}</p>
+    <p class="text-truncate">${callModal.details}</p>
+
+   `;
 }
 
 
