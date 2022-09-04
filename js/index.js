@@ -80,10 +80,10 @@ const newsCardcarded = callIdData => {
               <div class="mt-3 ms-5">
               <p><i class="fa-sharp fa-solid fa-eye"></i><span>${newsCard.total_view ? newsCard.total_view : "no view"}</span></p>
               </div>
-             <button onclick="modelCallId('${newsCard._id}')" type="button" class="ms-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
+             <button onclick="modelCallId('${newsCard._id}')" type="button" class="ms-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#idModelName">
               Details
              </button>
-          
+            
              </div>
           </div>
         </div>
