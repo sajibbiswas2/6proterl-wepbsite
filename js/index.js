@@ -49,6 +49,9 @@ const newsCardId = callId =>{
 
 const newsCardcarded = callIdData =>{
     console.log(callIdData);
+
+    const textIdCall = document.getElementById('textIdCall')
+    textIdCall.innerText =callIdData.length ?callIdData.length : "textNo " ;
   
   
     const newsCardCallIdCarded = document.getElementById('carddisplayId');
@@ -71,7 +74,7 @@ const newsCardcarded = callIdData =>{
             <div class="d-flex">
             <img style="height:40px; width:40px" class=" m-3 img-fluid rounded-circle" src="${newsCard.author.img}">
             <div>
-            <span class="d-block mt-2" >${newsCard.author.callDisplay?newsCard.author.callDisplay:"No name" }</span> 
+            <span class="d-block mt-2" >${newsCard.author.name ?newsCard.author.name:"no name"}</span> 
             <span class="d-block">${newsCard.author.published_date ? newsCard.author.published_date :"no date"}</span>
             </div >
               <div class="mt-3 ms-5">
@@ -87,8 +90,6 @@ const newsCardcarded = callIdData =>{
       `;
       newsCardCallIdCarded.appendChild(cardIdDisplayName)
     
-  
-  
     });
     
   }
