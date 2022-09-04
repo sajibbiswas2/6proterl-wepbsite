@@ -11,7 +11,7 @@ const linkId =async() =>{
 }
 
 const AncorCallId =async id =>{
-    // toggleloder(true)
+    loadingTogal(true)
     const url=(`https://openapi.programming-hero.com/api/news/category/${id}`)
     try{
       const res =await fetch (url)
@@ -70,7 +70,7 @@ const newsCardcarded = callIdData =>{
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">${newsCard.title ? newsCard.title : "no title"}</h5>
-            <p class="card-text text-truncate" >${newsCard.details.slice(0,500)}</p>
+            <p class="card-text text-truncate" >${newsCard.details.slice(0,200)}</p>
             <div class="d-flex">
             <img style="height:40px; width:40px" class=" m-3 img-fluid rounded-circle" src="${newsCard.author.img}">
             <div>
@@ -80,20 +80,28 @@ const newsCardcarded = callIdData =>{
               <div class="mt-3 ms-5">
               <p><i class="fa-sharp fa-solid fa-eye"></i><span>${newsCard.total_view ? newsCard.total_view :"no view" }</span></p>
               </div>
-             <button onclick="dataDetailsid('${newsCard._id}')" class="btn btn-primary h-25 ms-5 mt-3"  data-bs-toggle="modal" data-bs-target="#modalId">callIdData Details</button>
+             <button onclick="modelCallId('${newsCard._id}')" class="btn btn-primary h-25 ms-5 mt-3"  data-bs-toggle="modal" data-bs-target="#exampleModal">call Data Details</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-      
+    </div> 
       `;
       newsCardCallIdCarded.appendChild(cardIdDisplayName)
-    
+      loadingTogal(false)
     });
     
   }
-
+  const loadingTogal = toggal =>{
+    const loderId = document.getElementById('idtoggalCall');
+    if(toggal){
+     loderId.classList.remove('d-none');
+    }
+    else{
+     loderId.classList.add('d-none')
+    }
+ 
+ }
 
 
 
